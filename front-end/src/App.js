@@ -1,26 +1,35 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import { apiURL } from "./util/apiURL.js";
+import Index from "./Pages/Index.js";
+import Home from "./Pages/Home.js";
+import Show from "./Pages/Show.js";
+import NavBar from "./Components/NavBar.js";
 const API = apiURL();
 
 function App() {
-  const [days, setDays] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/test`)
-      .then(
-        (response) => setDays(response.data),
-        (error) => console.log("get", error)
-      )
-      .catch((c) => console.warn("catch", c));
-  }, []);
   return (
-    <div>
-      <ul>
-        {days.map((day) => (
-          <li key={day.name}>{day.name}</li>
-        ))}
-      </ul>
+    <div className="App">
+      <Router>
+        <NavBar />
+        <main>
+          <Switch>
+            {/* <Route exact path="/">
+              <Home />
+            </Route> */}
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/shirts">
+              <Index />
+            </Route>
+            <Route exact path="/shirts/:id">
+              <Show />
+            </Route>
+          </Switch>
+        </main>
+      </Router>
     </div>
   );
 }

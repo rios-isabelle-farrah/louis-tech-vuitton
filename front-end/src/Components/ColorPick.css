@@ -1,0 +1,38 @@
+.White,.Black,.Green,.Blue,.Pink,.Yellow{
+
+    border-radius: 50%;
+    margin: 3px;
+    height: 25px;
+    width: 25px;
+
+
+}
+.White{
+    background-color: white;
+
+}
+.Black{
+    background-color: black;
+    
+}
+.Pink{
+    background-color: pink;
+    
+}
+.Blue{
+    background-color: blue;
+    
+}
+.Yellow{
+    background-color: yellow;
+    
+}
+.Green{
+    background-color: green;
+    
+}
+.ul-button{
+    list-style: none;
+    display: flex;
+    
+}

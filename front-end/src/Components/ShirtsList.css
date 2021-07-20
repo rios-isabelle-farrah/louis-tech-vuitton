@@ -1,0 +1,23 @@
+.ul-shirts{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    border: teal solid 5px;
+}
+.shirt-box{
+    height: 300px;
+    width: 200px;
+    border: black 3px solid;
+    margin: 60px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    list-style: none;
+   
+}
+.Shirts{
+    border: blue solid 7px;
+}
