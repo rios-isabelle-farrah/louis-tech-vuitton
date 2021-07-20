@@ -1,13 +1,20 @@
 const db = require("../db/dbConfig.js");
 
+const getAllShirts = async () => {
+  try {
+    const allShirts = await db.any("SELECT * FROM shirts");
+    return allShirts;
+  } catch (err) {
+    return err;
+  }
+};
+
 const getShirt = async (id) => {
   try {
     // sanitize query by passing SECOND argument to db.one()
     const shirt = await db.one(`SELECT * FROM shirts WHERE id = $1`, id);
-    // const Shirt = await db.one(`SELECT * FROM Shirts WHERE id = $[id]`, {id:id})
     return shirt;
   } catch (error) {
-    //console.log(error);
   }
 };
 
@@ -34,14 +41,7 @@ const deleteShirt = async (id) => {
   }
 };
 
-const getAllShirts = async () => {
-  try {
-    const allShirts = await db.any("SELECT * FROM shirts");
-    return allShirts;
-  } catch (err) {
-    return err;
-  }
-};
+
 
 const updateShirt = async (id, shirt) => {
   try {

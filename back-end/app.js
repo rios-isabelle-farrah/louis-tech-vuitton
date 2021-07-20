@@ -19,14 +19,14 @@ app.get("/", (req, res) => {
 /////////////////////////////////////
 const db = require("./db/dbConfig.js");
 
-app.get("/test", async (req, res) => {
-  try {
-    const allDays = await db.any("SELECT * FROM test");
-    res.json(allDays);
-  } catch (err) {
-    res.json(err);
-  }
+const shirtsController = require("./controllers/shirts.js");
+app.use("/shirts", shirtsController);
+
+// 404 PAGE
+app.get("*", (req, res) => {
+  res.status(404).send("Page not found");
 });
+
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
