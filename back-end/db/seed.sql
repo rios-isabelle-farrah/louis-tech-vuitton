@@ -1,19 +1,11 @@
--- INSERT INTO test (name) VALUES
--- ('Monday'),
--- ('Tuesday'),
--- ('Wednesday'),
--- ('Thursday'),
--- ('Friday'),
--- ('Saturday'),
--- ('Sunday');
 \c shirts_dev;
 
-INSERT INTO shirts (size, color, price, in_stock) VALUES
-('Medium', 'Blue', 20,true),
-('Large', 'Pink', 30,true),
-('Small', 'Green', 10,false),
-('xx-Large', 'Yellow', 50,true),
-('Medium', 'White', 20,false),
-('Medium', 'Black', 20,true);
+INSERT INTO shirts (type_of, size, color, price, in_stock) VALUES
+('Tank','Medium', 'Blue', 20,true),
+('Long-Sleeve','Large', 'Pink', 30,true),
+('Short-Sleeve','Small', 'Green', 10,false),
+('Turtle-Neck','xx-Large', 'Yellow', 50,true),
+('Button-Up','Medium', 'White', 20,false),
+('Sweat-Shirt','Medium', 'Black', 20,true);
 
 

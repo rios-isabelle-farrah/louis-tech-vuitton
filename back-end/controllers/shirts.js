@@ -32,8 +32,8 @@ shirts.post("/", async (req, res) => {
 
 shirts.put("/:id", async (req, res) => {
   const { body, params } = req;
-  const { size, color, price, is_favorite } = body;
-  if (!size || !color || !price || !is_favorite) {
+  const { type_of, size, color, price, is_favorite } = body;
+  if (!type_of ||!size || !color || !price || !is_favorite) {
     res.status(422).json({
       error: true,
       success: false,

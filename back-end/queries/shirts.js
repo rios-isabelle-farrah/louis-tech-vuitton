@@ -19,11 +19,11 @@ const getShirt = async (id) => {
 };
 
 const createShirt = async (newShirt) => {
-  const { size, color, price, in_stock } = newShirt;
+  const {type_of, size, color, price, in_stock } = newShirt;
   try {
     const theShirt = await db.one(
-      "INSERT INTO shirts(size, color, price, in_stock) VALUES($1, $2, $3, $4) RETURNING *",
-      [size, color, price, in_stock]
+      "INSERT INTO shirts(type_of, size, color, price, in_stock) VALUES($1, $2, $3, $4, $5) RETURNING *",
+      [type_of, size, color, price, in_stock]
     );
     return theShirt;
   } catch (error) {
@@ -45,10 +45,10 @@ const deleteShirt = async (id) => {
 
 const updateShirt = async (id, shirt) => {
   try {
-    const { size, color, price, in_stock } = shirt;
+    const { type_of, size, color, price, in_stock } = shirt;
     const query =
-      "UPDATE shirts SET size = $1, color = $2, price = $3, in_stock = $4 WHERE id = $5 RETURNING *";
-    const result = await db.one(query, [size, color, price, in_stock, id]);
+      "UPDATE shirts SET type_of = $1 size = $2, color = $3, price = $4, in_stock = $5 WHERE id = $6 RETURNING *";
+    const result = await db.one(query, [type_of, size, color, price, in_stock, id]);
     return result;
   } catch (err) {
     return err;
