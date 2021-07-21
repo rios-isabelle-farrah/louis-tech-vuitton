@@ -1,3 +1,5 @@
+\c shirts_dev;
+
 INSERT INTO shirts (type_of, size, color, price, in_stock) VALUES
 ('Tank','Medium', 'Blue', 20,true),
 ('Long-Sleeve','Large', 'Pink', 30,true),
