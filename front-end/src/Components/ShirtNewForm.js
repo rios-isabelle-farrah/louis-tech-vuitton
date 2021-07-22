@@ -9,6 +9,7 @@ function ShirtNewForm() {
     console.log("ABOUT TO SEND THE REQUEST");
     try {
       await axios.post(`${API}/shirts`, newShirt);
+      debugger
       console.log("SUCCESS, SENDING YOU TO INDEX PAGE");
       history.push(`/shirts`);
     } catch (err) {
@@ -25,9 +26,9 @@ function ShirtNewForm() {
   const handleTextChange = (event) => {
     setShirt({ ...shirt, [event.target.id]: event.target.value });
   };
-  // const handleCheckboxChange = () => {
-  //   setShirt({ ...shirt, in_stock: !shirt.in_stock });
-  // };
+  const handleCheckboxChange = () => {
+    setShirt({ ...shirt, in_stock: !shirt.in_stock });
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     addShirt(shirt);
@@ -35,10 +36,10 @@ function ShirtNewForm() {
   return (
     <div className="New-Form">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="typeOf">Type of:</label>
+        <label htmlFor="type_of">Type of:</label>
         <input
-          id="typeOf"
-          value={shirt.typeOf}
+          id="type_of"
+          value={shirt.type_of}
           type="text"
           onChange={handleTextChange}
           placeholder="Type of Shirt"
@@ -48,10 +49,10 @@ function ShirtNewForm() {
         <input
           id="size"
           type="text"
-          required
           value={shirt.size}
           placeholder="size"
           onChange={handleTextChange}
+          required
         />
         <label htmlFor="color">Color:</label>
         <input
@@ -71,15 +72,16 @@ function ShirtNewForm() {
           placeholder="price"
           onChange={handleTextChange}
         />
-        {/* <label htmlFor="in_stock">available</label>
+        <label htmlFor="in_stock">available</label>
         <input
           id="in_stock"
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={shirt.in_stock}
-        /> */}
+        />
         <br />
-        {/* <input type="submit" /> */}
+        <input type="submit" />
+        {/* <input id="myInput" type="file" /> */}
         <button type="submit">submit</button>
       </form>
     </div>
