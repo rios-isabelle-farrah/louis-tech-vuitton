@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useHistory, withRouter, Link } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 import { apiURL } from "../util/apiURL.js";
 const API = apiURL();
 function ShirtNewForm() {
@@ -9,7 +9,7 @@ function ShirtNewForm() {
     console.log("ABOUT TO SEND THE REQUEST");
     try {
       await axios.post(`${API}/shirts`, newShirt);
-      debugger
+      debugger;
       console.log("SUCCESS, SENDING YOU TO INDEX PAGE");
       history.push(`/shirts`);
     } catch (err) {
@@ -90,19 +90,3 @@ function ShirtNewForm() {
   );
 }
 export default withRouter(ShirtNewForm);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,14 +1,10 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { apiURL } from "./util/apiURL.js";
 import Index from "./Pages/Index.js";
 import Home from "./Pages/Home.js";
 import Show from "./Pages/Show.js";
 import New from "./Pages/New.js";
 import NavBar from "./Components/NavBar.js";
 import Edit from "./Pages/Edit.js";
-const API = apiURL();
 
 function App() {
   return (

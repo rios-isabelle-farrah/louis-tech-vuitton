@@ -16,7 +16,7 @@ function ShirtEditForm() {
   const updateShirt = async (updatedShirt) => {
     try {
       await axios.put(`${API}/shirts/${id}`, updatedShirt);
-      debugger
+      debugger;
       history.push(`/shirts/${id}`);
     } catch (e) {
       console.log(e);
@@ -31,11 +31,13 @@ function ShirtEditForm() {
 
   useEffect(() => {
     axios.get(`${API}/shirts/${id}`).then(
-      (response) => {console.log(response.data); setShirt(response.data.payload)},
+      (response) => {
+        console.log(response.data);
+        setShirt(response.data.payload);
+      },
       (error) => history.push(`/not-found`)
-      
     );
-  }, []);
+  }, [API, history, id]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -44,7 +46,7 @@ function ShirtEditForm() {
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-      <label htmlFor="type_of">type of:</label>
+        <label htmlFor="type_of">type of:</label>
         <input
           id="type_of"
           value={shirt.type_of}

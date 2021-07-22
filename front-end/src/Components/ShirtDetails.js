@@ -38,7 +38,7 @@ function ShirtDetails() {
   };
   useEffect(() => {
     fetchShirt();
-  }, []);
+  });
 
   const handleDelete = async () => {
     await deleteShirt();
