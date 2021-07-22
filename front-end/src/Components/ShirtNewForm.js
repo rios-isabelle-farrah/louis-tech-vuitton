@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useHistory, withRouter } from "react-router-dom";
+import { useHistory, withRouter, Link } from "react-router-dom";
 import { apiURL } from "../util/apiURL.js";
 const API = apiURL();
 function ShirtNewForm() {
@@ -32,6 +32,9 @@ function ShirtNewForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     addShirt(shirt);
+  };
+  const goBack = () => {
+    history.push("/shirts");
   };
   return (
     <div className="New-Form">
@@ -80,9 +83,8 @@ function ShirtNewForm() {
           checked={shirt.in_stock}
         />
         <br />
-        <input type="submit" />
-        {/* <input id="myInput" type="file" /> */}
         <button type="submit">submit</button>
+        <button onClick={goBack}>Go back</button>
       </form>
     </div>
   );

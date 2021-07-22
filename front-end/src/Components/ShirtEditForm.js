@@ -28,7 +28,7 @@ function ShirtEditForm() {
   const handleCheckboxChange = () => {
     setShirt({ ...shirt, in_stock: !shirt.in_stock });
   };
-  
+
   useEffect(() => {
     axios.get(`${API}/shirts/${id}`).then(
       (response) => {console.log(response.data); setShirt(response.data.payload)},
@@ -91,7 +91,7 @@ function ShirtEditForm() {
         <input type="submit" />
       </form>
       <br></br>
-      <Link to={`/shirts`}>
+      <Link to={`/shirts/${id}`}>
         <button>Go back</button>
       </Link>
     </div>

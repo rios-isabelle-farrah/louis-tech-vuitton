@@ -45,8 +45,6 @@ function ShirtDetails() {
     goBack();
   };
 
-  const handleUpdate = async () => {};
-
   return (
     <article>
       {/* <ShirtColors color={color} type_of={type_of}/> */}
