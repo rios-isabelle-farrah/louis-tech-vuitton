@@ -32,17 +32,17 @@ shirts.post("/", async (req, res) => {
 
 shirts.put("/:id", async (req, res) => {
   const { body, params } = req;
-  const { type_of, size, color, price, is_favorite } = body;
-  if (!type_of ||!size || !color || !price || !is_favorite) {
-    res.status(422).json({
-      error: true,
-      success: false,
-      message: "not!",
-    });
-  } else {
+  const { type_of, size, color, price, in_stock } = body;
+  // if (!type_of ||!size || !color || !price || !in_stock) {
+  //   res.status(422).json({
+  //     error: true,
+  //     success: false,
+  //     message: "not!",
+  //   });
+  // } else {
     const result = await updateShirt(params.id, body);
     res.json({success: true, payload:result});
-  }
+  // }
 });
 
 shirts.delete("/:id", async (req, res) => {

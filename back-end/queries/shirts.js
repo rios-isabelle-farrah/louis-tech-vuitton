@@ -44,13 +44,14 @@ const deleteShirt = async (id) => {
 
 
 const updateShirt = async (id, shirt) => {
+  const { type_of, size, color, price, in_stock } = shirt;
   try {
-    const { type_of, size, color, price, in_stock } = shirt;
     const query =
-      "UPDATE shirts SET type_of = $1 size = $2, color = $3, price = $4, in_stock = $5 WHERE id = $6 RETURNING *";
+      "UPDATE shirts SET type_of = $1, size = $2, color = $3, price = $4, in_stock = $5 WHERE id = $6 RETURNING *";
     const result = await db.one(query, [type_of, size, color, price, in_stock, id]);
     return result;
   } catch (err) {
+    console.log(err)
     return err;
   }
 };

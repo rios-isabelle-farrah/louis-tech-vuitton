@@ -7,6 +7,7 @@ import Home from "./Pages/Home.js";
 import Show from "./Pages/Show.js";
 import New from "./Pages/New.js";
 import NavBar from "./Components/NavBar.js";
+import Edit from "./Pages/Edit.js";
 const API = apiURL();
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
         <NavBar />
         <main>
           <Switch>
+            <Route exact path="/shirts/:id/edit">
+              <Edit />
+            </Route>
             <Route exact path="/shirts/new">
               <New />
             </Route>
