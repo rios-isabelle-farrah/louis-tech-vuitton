@@ -1,56 +1,107 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+
+
+
+nav{
+  padding-right: 25px;
 }
 
-nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: goldenrod;
+nav a {
+  /* display: flex; */
+  /* justify-content: space-around; */
+  /* background-color: goldenrod; */
+  text-decoration: none;
+  color: lightgrey;
+  margin: 25px;
+}
+
+nav a:hover{
+  color: rgba(255, 217, 0, 0.705);
+}
+
+h2{
+  padding: 25px;
 }
 
 nav button {
-  padding: 0;
+  /* margin: 20px; */
+  /* padding: 0;
   font-size: x-large;
   font-weight: bold;
   height: 50px;
   width: 200px;
-  align-self: center;
+  align-self: center; */
 }
 
 main {
-  border: chartreuse solid 1px;;
-  margin: 0 10px;
+  /* border: chartreuse solid 1px;;
+  margin: 0 10px; */
 }
 
 form {
-  padding: 2%;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-self: space-between;
-  border: coral solid 1px;
+  padding: 2%; 
+  width: 500px;
+  /* display: flex;
+  flex-direction: column; */
+  /* align-self: space-between; */
+  /* border: coral solid 1px; */
 }
 
-form input {
-  width: 200px;
-  height: 20px;
-  margin: 2% 0 8% 0;
+form input{
+  width: 60%;
+ /* height: 20px; */
+  /* margin: 2px */
 }
 
 form button {
   width: 100px;
-  margin: auto;
+  /* margin: auto; */
 }
+
+.item{
+  margin-bottom: 15px;
+}
+
+.price{
+  margin-bottom: 15px;
+}
+
+.color{
+  margin-bottom: 15px;
+}
+
+.size{
+  margin-bottom: 15px;
+}
+
+.type_of{
+  margin-bottom: 10px;
+}
+
+.edit_size{
+  margin-bottom: 10px;
+}
+
+.edit_color{
+  margin-bottom: 10px;
+}
+
+.edit_price{
+  margin-bottom: 15px;
+}
+
 
 
 /* SEE BELOW FOR CSS RESET */

@@ -1,7 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { ButtonGroup, FloatingLabel } from "react-bootstrap";
 import { useHistory, withRouter } from "react-router-dom";
 import { apiURL } from "../util/apiURL.js";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
 const API = apiURL();
 function ShirtNewForm() {
   let history = useHistory();
@@ -39,52 +43,75 @@ function ShirtNewForm() {
   return (
     <div className="New-Form">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="type_of">Type of:</label>
-        <input
-          id="type_of"
-          value={shirt.type_of}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Type of Shirt"
-          required
-        />
-        <label htmlFor="size">Size:</label>
-        <input
-          id="size"
-          type="text"
-          value={shirt.size}
-          placeholder="size"
-          onChange={handleTextChange}
-          required
-        />
-        <label htmlFor="color">Color:</label>
-        <input
-          id="color"
-          type="text"
-          name="color"
-          value={shirt.color}
-          placeholder="color"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="price">Price:</label>
-        <input
-          id="price"
-          type="number"
-          name="price"
-          value={shirt.price}
-          placeholder="price"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="in_stock">available</label>
-        <input
-          id="in_stock"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={shirt.in_stock}
-        />
+        <Form.Group className="item">
+          <FloatingLabel label="Item">
+            <Form.Control
+              id="type_of"
+              value={shirt.type_of}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="Type of Shirt"
+              required
+            />
+          </FloatingLabel>
+        </Form.Group>
+        <Form.Group className="size">
+          <FloatingLabel label="Size">
+            <Form.Control
+              id="size"
+              type="text"
+              value={shirt.size}
+              placeholder="size"
+              onChange={handleTextChange}
+              required
+            />
+          </FloatingLabel>
+        </Form.Group>
+        <Form.Group className="color">
+          <FloatingLabel label="Color" htmlFor="color">
+            <Form.Control
+              id="color"
+              type="text"
+              name="color"
+              value={shirt.color}
+              placeholder="color"
+              onChange={handleTextChange}
+            />
+          </FloatingLabel>
+        </Form.Group>
+        <Form.Group className="price">
+          <FloatingLabel label="Price">
+            <Form.Control
+              id="price"
+              type="number"
+              name="price"
+              value={shirt.price}
+              placeholder="price"
+              onChange={handleTextChange}
+            />
+          </FloatingLabel>
+        </Form.Group>
+        <Form.Group>
+          {/* <FloatingLabel Label="Availble" htmlFor="in_stock"> */}
+          <Form.Check
+            id="in_stock"
+            type="checkbox"
+            label="Availble"
+            onChange={handleCheckboxChange}
+            checked={shirt.in_stock}
+          />
+
+          {/* </FloatingLabel> */}
+        </Form.Group>
         <br />
-        <button type="submit">submit</button>
-        <button onClick={goBack}>Go back</button>
+        <ButtonGroup>
+          <Button variant="dark" type="submit">
+            Add New
+          </Button>
+          <Button variant="light" onClick={goBack}>
+            Back
+          </Button>
+        </ButtonGroup>
       </form>
     </div>
   );
