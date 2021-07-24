@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/joinpursuit/pern-final-project/issues"
   },
-  "homepage": "https://github.com/joinpursuit/pern-final-project#readme"
+  "homepage": "https://github.com/joinpursuit/pern-final-project#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.2",
+    "react-bootstrap": "^2.0.0-beta.4"
+  }
 }
