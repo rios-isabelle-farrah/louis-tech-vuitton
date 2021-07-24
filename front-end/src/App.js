@@ -26,7 +26,7 @@ function App() {
             <Route exact path="/shirts">
               <Index />
             </Route>
-            <Route exact path="/login/">
+            <Route exact path="/users/login/">
               <Login />
             </Route>
             <Route exact path="/">

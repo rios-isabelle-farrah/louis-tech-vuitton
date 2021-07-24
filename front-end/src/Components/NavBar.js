@@ -19,7 +19,7 @@ export default function NavBar() {
         {/* <Link to="/">Home</Link> */}
         <NavLink to="/shirts">Shirts</NavLink>
         <NavLink to="/shirts/new">Add New Shirt</NavLink>
-        <NavLink to="/users">Login</NavLink>
+        <NavLink to="/users/login">Login</NavLink>
         </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>
       {/* <h2>
