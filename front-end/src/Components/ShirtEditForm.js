@@ -4,6 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 function ShirtEditForm() {
   let { id } = useParams();
@@ -114,10 +115,14 @@ function ShirtEditForm() {
         </Form.Group>
 
         <br />
-        <Button type="submit" variant="dark">
-          Submit
-        </Button>
-        <Button href={`/shirts/${id}`} variant="light">Back</Button>
+        <ButtonGroup>
+          <Button type="submit" variant="dark">
+            Submit
+          </Button>
+          <Button href={`/shirts/${id}`} variant="light">
+            Back
+          </Button>
+        </ButtonGroup>
       </form>
       {/* <br></br> */}
       {/* <Link to={`/shirts/${id}`}> */}
