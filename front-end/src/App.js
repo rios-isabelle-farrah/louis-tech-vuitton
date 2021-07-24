@@ -5,6 +5,7 @@ import Show from "./Pages/Show.js";
 import New from "./Pages/New.js";
 import NavBar from "./Components/NavBar.js";
 import Edit from "./Pages/Edit.js";
+import Login from "./Pages/Login.js";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route exact path="/shirts">
               <Index />
+            </Route>
+            <Route exact path="/login/">
+              <Login />
             </Route>
             <Route exact path="/">
               <Home />
