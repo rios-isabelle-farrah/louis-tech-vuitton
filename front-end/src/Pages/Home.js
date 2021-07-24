@@ -1,8 +1,11 @@
+import HomeDetails from "../Components/HomeDetails"
+
+
 function Home() {
     return (
       <div className="Home">
-        <h2>Welcome</h2>
-        <h3>To the greatest Apparel app!</h3>
+        <h2>Fall 2021 Collection Arrive</h2>
+        <HomeDetails />
       </div>
     );
   }

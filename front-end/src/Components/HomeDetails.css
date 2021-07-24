@@ -1,0 +1,29 @@
+.home-details{ 
+    display: flex; 
+    flex-wrap: wrap;
+     flex-direction: column;
+ }
+
+.home-container{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    justify-content: center;
+    /* width: 100%; */
+}
+
+.carousel{
+    background: lightgray;
+    /* text-align: center;
+    align-items: center; */
+    padding-left: 50px;
+    padding-right: 50px;
+   
+}
+
+.shop-button{
+
+    margin: 25px auto;
+    width: 70px;
+
+}
