@@ -1,7 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+
 function ShirtEditForm() {
   let { id } = useParams();
   let history = useHistory();
@@ -13,6 +17,7 @@ function ShirtEditForm() {
     price: "",
     in_stock: false,
   });
+
   const updateShirt = async (updatedShirt) => {
     try {
       await axios.put(`${API}/shirts/${id}`, updatedShirt);
@@ -22,9 +27,11 @@ function ShirtEditForm() {
       console.log(e);
     }
   };
+
   const handleTextChange = (event) => {
     setShirt({ ...shirt, [event.target.id]: event.target.value });
   };
+
   const handleCheckboxChange = () => {
     setShirt({ ...shirt, in_stock: !shirt.in_stock });
   };
@@ -43,59 +50,83 @@ function ShirtEditForm() {
     event.preventDefault();
     updateShirt(shirt, id);
   };
+
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="type_of">type of:</label>
-        <input
-          id="type_of"
-          value={shirt.type_of}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="type_of of Shirt"
-          required
-        />
-        <label htmlFor="size">Size:</label>
-        <input
-          id="size"
-          type="text"
-          required
-          value={shirt.size}
-          placeholder="size"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="color">Color:</label>
-        <input
-          id="color"
-          type="text"
-          name="color"
-          value={shirt.color}
-          placeholder="artist"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="price">Price:</label>
-        <input
-          id="price"
-          type="number"
-          name="price"
-          value={shirt.price}
-          placeholder="price"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="in_stock">In Stock:</label>
-        <input
-          id="in_stock"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={shirt.in_stock}
-        />
+        <Form.Group className="type_of">
+          <Form.Label htmlFor="type_of">Item:</Form.Label>
+          <Form.Control
+            id="type_of"
+            value={shirt.type_of}
+            type="text"
+            onChange={handleTextChange}
+            placeholder="type_of of Shirt"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="edit_size">
+          <Form.Label htmlFor="size">Size:</Form.Label>
+          <Form.Control
+            id="size"
+            type="text"
+            required
+            value={shirt.size}
+            placeholder="size"
+            onChange={handleTextChange}
+          />
+        </Form.Group>
+
+        <Form.Group className="edit_color">
+          <Form.Label htmlFor="color">Color:</Form.Label>
+          <Form.Control
+            id="color"
+            type="text"
+            name="color"
+            value={shirt.color}
+            placeholder="artist"
+            onChange={handleTextChange}
+          />
+        </Form.Group>
+
+        <Form.Group className="edit_price">
+          <Form.Label htmlFor="price">Price:</Form.Label>
+          <Form.Control
+            id="price"
+            type="number"
+            name="price"
+            value={shirt.price}
+            placeholder="price"
+            onChange={handleTextChange}
+          />
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Check
+            htmlFor="in_stock"
+            id="in_stock"
+            type="checkbox"
+            label="In Stock:"
+            variant="dark"
+            onChange={handleCheckboxChange}
+            checked={shirt.in_stock}
+          />
+        </Form.Group>
+
         <br />
-        <input type="submit" />
+        <ButtonGroup>
+          <Button type="submit" variant="dark">
+            Submit
+          </Button>
+          <Button href={`/shirts/${id}`} variant="light">
+            Back
+          </Button>
+        </ButtonGroup>
       </form>
-      <br></br>
-      <Link to={`/shirts/${id}`}>
-        <button>Go back</button>
-      </Link>
+      {/* <br></br> */}
+      {/* <Link to={`/shirts/${id}`}> */}
+      {/* </Link> */}
     </div>
   );
 }

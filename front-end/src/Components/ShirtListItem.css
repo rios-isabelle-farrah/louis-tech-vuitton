@@ -1,29 +1,29 @@
-.shirtIcon{
+ .shirtIcon{ 
     height: 200px;
     width: 170px;
     text-align: center;
-    border: goldenrod solid 5px;
-}
+    /* border: goldenrod solid 5px; */
+} 
 /* .shirt-box{
     border: black 3px solid;
 } */
-.shirt-details{
-    display: flex;
-    flex-direction: column;
+/* .shirt-details{  */
+    /* display: flex; */
+    /* flex-direction: column; */
     /* align-items: center; */
     /* text-align: center; */
-    border: red solid 3px;
+    /* border: red solid 3px; */
 
-}
-.ul-deets{
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+ /* }   */
+/* .ul-deets{ */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* list-style: none; */
     /* align-items: center;
     justify-content: center; */
-    text-align: center;
-    border: purple solid 5px;
-}
- .li-deets{
-border: pink solid 5px;
-} 
+    /* text-align: center; */
+    /* border: purple solid 5px; */
+/* } */
+ /* .li-deets{ */
+/* border: pink solid 5px; */
+/* }  */

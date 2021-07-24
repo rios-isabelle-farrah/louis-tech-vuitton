@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
+        <NavBar className="nav"/>
         <main>
           <Switch>
             <Route exact path="/shirts/:id/edit">

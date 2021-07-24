@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { withRouter, useHistory, useParams, Link } from "react-router-dom";
 import ShirtColors from "./ShirtColors.js";
 import { apiURL } from "../util/apiURL";
+import { Card, Button, ButtonGroup } from "react-bootstrap";
 
 const API = apiURL();
 function ShirtDetails() {
@@ -47,11 +48,34 @@ function ShirtDetails() {
 
   return (
     <article>
-      {/* <ShirtColors color={color} type_of={type_of}/> */}
+      <Card className="shirt-show" style={{ width: '12rem'}}>
+      <ShirtColors color={color} type_of={type_of}/>
+        {/* <Card.Header>{type_of}</Card.Header> */}
+      <Card.Body>
+              <Card.Title>
+              {`${type_of}`}
+              </Card.Title>
+                <Card.Subtitle>
+                {`Color: ${color}`}
+                </Card.Subtitle>
+                <Card.Subtitle>
+                {`Price: $${shirt.price}.00`}
+                </Card.Subtitle>
+                <Card.Subtitle>
+                {`In Stock: ${shirt.in_stock ? "true" : "false"}`}
+                </Card.Subtitle>
+            </Card.Body>
 
-      <ShirtColors color={color} type_of={type_of} />
+      </Card>
+      <ButtonGroup>
+      <Link to={`/shirts/${id}/edit`}>
+        <Button variant="dark">Edit</Button>
+      </Link>
+      <Button variant="light" onClick={goBack}>Back</Button>
+      <Button className="show-button" variant="danger" onClick={handleDelete}>Delete</Button>
+      </ButtonGroup>
 
-      <p>
+      {/* <p>
         <b>Type:</b> {shirt.type_of}
       </p>
       <p>
@@ -65,12 +89,7 @@ function ShirtDetails() {
       </p>
       <p>
         <b>In Stock:</b> {shirt.in_stock ? "true" : "false"}
-      </p>
-      <button onClick={handleDelete}>Delete</button>
-      <button onClick={goBack}>Back</button>
-      <Link to={`/shirts/${id}/edit`}>
-        <button>Edit</button>
-      </Link>
+      </p> */}
     </article>
   );
 }
