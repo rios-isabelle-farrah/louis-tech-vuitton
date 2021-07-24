@@ -9,7 +9,7 @@ const { createShirt } = require("../queries/shirts");
 // INDEX
 shirts.get("/", async (req, res) => {
   const allShirts = await getAllShirts();
-  console.log(allShirts)
+  // console.log(allShirts)
   res.json({ success: true, payload: allShirts });
 });
 

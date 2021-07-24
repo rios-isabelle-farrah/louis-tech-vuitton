@@ -22,6 +22,9 @@ const db = require("./db/dbConfig.js");
 const shirtsController = require("./controllers/shirts.js");
 app.use("/shirts", shirtsController);
 
+const usersController = require("./controllers/users.js");
+app.use("/users", usersController);
+
 // 404 PAGE
 app.get("*", (req, res) => {
   res.status(404).send("Page not found");
