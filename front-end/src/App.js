@@ -9,7 +9,6 @@ import Edit from "./Pages/Edit.js";
 import New from "./Pages/New.js";
 import { useState } from "react";
 
-
 function App() {
 const [ currentUser, setCurrentUser ] = useState(null)
 
@@ -27,12 +26,17 @@ const [ currentUser, setCurrentUser ] = useState(null)
             <Route exact path="/shirts/:id">
               <Show />
             </Route>
-            {/* pass state to index */}
             <Route exact path="/shirts">
               <Index currentUser={currentUser}/>
             </Route>
             <Route exact path="/users/login/">
               <Login setCurrentUser={setCurrentUser} />
+            </Route>
+            <Route exact path="/users/login/new_user">
+              <NewUser />
+            </Route>
+            <Route exact path="/users/login/">
+              <Login />
             </Route>
             <Route exact path="/users/login/new_user">
               <NewUser />
