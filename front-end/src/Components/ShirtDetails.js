@@ -1,9 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { withRouter, useHistory, useParams, Link } from "react-router-dom";
-import ShirtColors from "./ShirtColors.js";
 import { apiURL } from "../util/apiURL";
 import { Card, Button, ButtonGroup } from "react-bootstrap";
+import "../Components/Styles/ShirtDetails.css";
+import blackHoodie from "../Components/Images/blackHoodie.png";
+import blueTank from "../Components/Images/blueTank.png";
+import greenShort from "../Components/Images/greenShort.png";
+import yellowTurtle from "../Components/Images/yellowTurtle.png";
+import pinkLong from "../Components/Images/pinkLong.png";
+import whiteButton from "../Components/Images/whiteButton.png";
 
 const API = apiURL();
 function ShirtDetails() {
@@ -48,48 +54,84 @@ function ShirtDetails() {
 
   return (
     <article>
-      <Card className="shirt-show" style={{ width: '12rem'}}>
-      <ShirtColors color={color} type_of={type_of}/>
-        {/* <Card.Header>{type_of}</Card.Header> */}
-      <Card.Body>
-              <Card.Title>
-              {`${type_of}`}
-              </Card.Title>
-                <Card.Subtitle>
-                {`Color: ${color}`}
-                </Card.Subtitle>
-                <Card.Subtitle>
-                {`Price: $${shirt.price}.00`}
-                </Card.Subtitle>
-                <Card.Subtitle>
-                {`In Stock: ${shirt.in_stock ? "true" : "false"}`}
-                </Card.Subtitle>
-            </Card.Body>
+      {/* <div className="card-div"> */}
 
-      </Card>
+      <div className="text-shirt-info">
+        {shirt.color === "Blue" && shirt.type_of === "Tank" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blueTank}
+            alt="icon"
+            style={{ width: "13rem", height: "14rem" }}
+          />
+        )}
+
+        {shirt.color === "Green" && (
+          <Card.Img
+            className="shirtIcon"
+            src={greenShort}
+            alt="icon"
+            style={{ width: "13rem", height: "14rem" }}
+          />
+        )}
+
+        {shirt.color === "Pink" && shirt.type_of === "Long-Sleeve" && (
+          <Card.Img
+            className="shirtIcon"
+            src={pinkLong}
+            alt="icon"
+            style={{ width: "13rem", height: "14rem" }}
+          />
+        )}
+
+        {shirt.color === "Yellow" && shirt.type_of === "Turtle-Neck" && (
+          <Card.Img
+            className="shirtIcon"
+            src={yellowTurtle}
+            alt="icon"
+            style={{ width: "13rem", height: "14rem" }}
+          />
+        )}
+
+        {shirt.color === "White" && shirt.type_of === "Button-Up" && (
+          <Card.Img
+            className="shirtIcon"
+            src={whiteButton}
+            alt="icon"
+            style={{ width: "13rem", height: "14rem" }}
+          />
+        )}
+
+        {shirt.color === "Black" && shirt.type_of === "Sweat-Shirt" && (
+          <Card.Img
+            className="shirtIcon"
+            // src={blackHoodie}
+            src={blackHoodie}
+            alt="icon"
+            style={{ width: "13rem", height: "14rem" }}
+          />
+        )}
+
+        <div className="just-text">
+          <h3> {type_of}</h3>
+          {color}
+          <p className="price-p"> ${shirt.price}.00</p>
+
+          {shirt.in_stock && "Available"}
+          <br></br>
+        </div>
+      </div>
       <ButtonGroup>
-      <Link to={`/shirts/${id}/edit`}>
-        <Button variant="dark">Edit</Button>
-      </Link>
-      <Button variant="light" onClick={goBack}>Back</Button>
-      <Button className="show-button" variant="danger" onClick={handleDelete}>Delete</Button>
+        <Link to={`/shirts/${id}/edit`}>
+          <Button variant="dark">Edit</Button>
+        </Link>
+        <Button variant="light" onClick={goBack}>
+          Back
+        </Button>
+        <Button className="show-button" variant="danger" onClick={handleDelete}>
+          Delete
+        </Button>
       </ButtonGroup>
-
-      {/* <p>
-        <b>Type:</b> {shirt.type_of}
-      </p>
-      <p>
-        <b>Color:</b> {shirt.color}
-      </p>
-      <p>
-        <b>Size:</b> {shirt.size}
-      </p>
-      <p>
-        <b>Price:</b> {shirt.price}
-      </p>
-      <p>
-        <b>In Stock:</b> {shirt.in_stock ? "true" : "false"}
-      </p> */}
     </article>
   );
 }
