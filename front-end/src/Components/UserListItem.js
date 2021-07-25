@@ -1,10 +1,10 @@
 function UserListItem({ usernames }) {
   //   console.log(usernames[usernames.length - 1]["username"]);
-  if (usernames.length === 0) {
-    usernames.push(0);
-  }
-  console.log("Username", usernames);
-  const currentUser = usernames[usernames.length - 1]["username"];
+  // if (usernames.length === 0) {
+  //   usernames.push(0);
+  // }
+  // console.log("Username", usernames);
+  // const currentUser = usernames[usernames.length - 1]["username"];
 
   return (
     <h2 className="user-details">
@@ -14,7 +14,7 @@ function UserListItem({ usernames }) {
         return username;
       })} */}
 
-      {currentUser ? currentUser : null}
+      {/* {currentUser ? currentUser : null} */}
     </h2>
   );
 }
