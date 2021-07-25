@@ -22,12 +22,12 @@ users.post("/", async (req, res) => {
   res.json(result);
 });
 
-// SHOW
-users.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  const user = await getUser(id);
-  if (user) {
-    res.json(user);
+// SHOW - not RESTful
+users.get("/login", async (req, res) => {
+  const { user, pw } = req.query;
+  const user1 = await getUser(user, pw);
+  if (user1) {
+    res.json(user1);
   } else {
     res.redirect("/404");
   }

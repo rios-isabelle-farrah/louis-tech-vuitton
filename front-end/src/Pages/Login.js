@@ -1,10 +1,10 @@
 import LoginForm from "../Components/LoginForm";
 
-function Login() {
+function Login({setCurrentUser}) {
   return (
     <main className="login">
       <h2>User Login</h2>
-      <LoginForm />
+      <LoginForm setCurrentUser={setCurrentUser}/>
     </main>
   );
 }

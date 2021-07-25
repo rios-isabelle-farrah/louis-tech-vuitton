@@ -25,12 +25,13 @@ const createUser = async (newUser) => {
   }
 };
 
-// SHOW
-const getUser = async (id) => {
+// SHOW - not Restful
+const getUser = async (user, pw) => {
   try {
-    const user = await db.one(`SELECT * FROM users WHERE id = $1`, id);
-    return { sucess: true, payload: user };
+    const user1 = await db.oneOrNone(`SELECT * FROM users WHERE username = $1 AND password = $2`, [user, pw]);
+    return { sucess: true, payload: user1 };
   } catch (error) {
+    console.log(error)
     return { sucess: false, payload: error };
   }
 };

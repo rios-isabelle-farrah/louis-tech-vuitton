@@ -5,7 +5,7 @@ import UserListItem from "./UserListItem";
 
 const API = apiURL();
 
-function Username() {
+function Username({currentUser}) {
   const [usernames, setUsernames] = useState([]);
 
   const getUsernames = async () => {
@@ -24,7 +24,7 @@ function Username() {
   return (
     <div className="usernames">
       <section>
-        <UserListItem usernames={usernames} />
+        <UserListItem currentUser={currentUser} />
       </section>
     </div>
   );
