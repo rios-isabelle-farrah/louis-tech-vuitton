@@ -1,11 +1,11 @@
 import ShirtsList from "../Components/ShirtsList";
 import Username from "../Components/Username";
 
-function Index() {
+function Index({currentUser}) {
   return (
     <main className="Index">
       <h2>Fall Collection 2021</h2>
-      <Username />
+      <Username currentUser={currentUser}/>
       <ShirtsList />
     </main>
   );

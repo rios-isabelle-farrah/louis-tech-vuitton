@@ -1,15 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
 import { ButtonGroup, FloatingLabel } from "react-bootstrap";
-import { useHistory, withRouter, Link, useParams } from "react-router-dom";
+import { useHistory, withRouter, Link } from "react-router-dom";
+
 import { apiURL } from "../util/apiURL.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const LoginForm = () => {
+const LoginForm = ({ setCurrentUser }) => {
   const API = apiURL();
   const history = useHistory();
-  const { username } = useParams();
 
   const [user, setUser] = useState({
     username: "",
@@ -19,11 +19,9 @@ const LoginForm = () => {
   // SHOW
   const getUser = async () => {
     try {
-      await axios.get(`${API}/users/login`, username);
-      // console.log(user);
-      goBack();
+      const res = await axios.get(`${API}/users/login?user=${user.username}&pw=${user.password}`);
+     return res.data.payload.username;
     } catch (error) {
-      // window.alert("No user exist")
       console.log(error);
     }
   };
@@ -32,9 +30,12 @@ const LoginForm = () => {
     setUser({ ...user, [event.target.id]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    getUser(user);
+    const validUser = await getUser();
+    if (validUser) {
+      setCurrentUser(validUser)}
+    goBack();
   };
 
   const goBack = () => {

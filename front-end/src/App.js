@@ -7,40 +7,11 @@ import Home from "./Pages/Home.js";
 import Show from "./Pages/Show.js";
 import Edit from "./Pages/Edit.js";
 import New from "./Pages/New.js";
-
-// const [user, setUser] = useState({
-//   username: "",
-//   password: "",
-// });
-
-// get req - so state can be passed down to login to shirts
-// const addUser = async (newUser) => {
-//   try {
-//     await axios.post(`${API}/users`, newUser);
-//     // console.log(newUser)
-//     goBack();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// // SHOW
-// const getUser = async () => {
-//   try {
-//     await axios.get(`${API}/users/login`, username);
-//     // console.log(user);
-//     goBack();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-
-// const handleTextChange = (event) => {
-//   setUser({ ...user, [event.target.id]: event.target.value });
-// };
+import { useState } from "react";
 
 function App() {
+const [ currentUser, setCurrentUser ] = useState(null)
+
   return (
     <div className="App">
       <Router>
@@ -55,9 +26,14 @@ function App() {
             <Route exact path="/shirts/:id">
               <Show />
             </Route>
-            {/* pass state to index */}
             <Route exact path="/shirts">
-              <Index />
+              <Index currentUser={currentUser}/>
+            </Route>
+            <Route exact path="/users/login/">
+              <Login setCurrentUser={setCurrentUser} />
+            </Route>
+            <Route exact path="/users/login/new_user">
+              <NewUser />
             </Route>
             <Route exact path="/users/login/">
               <Login />

@@ -1,5 +1,4 @@
 //Dependencies
-
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { apiURL } from "../util/apiURL.js";
@@ -27,9 +26,7 @@ function ShirtsList() {
     }
   };
 
-
   const handleColorPicked = (e) => {
-
     setCurrentColor(e);
   };
 
