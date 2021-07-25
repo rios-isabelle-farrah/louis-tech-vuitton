@@ -5,6 +5,7 @@ import Show from "./Pages/Show.js";
 import New from "./Pages/New.js";
 import NavBar from "./Components/NavBar.js";
 import Edit from "./Pages/Edit.js";
+import Footer from "./Pages/Footer"
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             </Route>
           </Switch>
         </main>
+        <Footer />
       </Router>
     </div>
   );

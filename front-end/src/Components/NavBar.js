@@ -11,7 +11,7 @@ export default function NavBar() {
         variant="dark"
       >
         <ReactBootStrap.Navbar.Brand id="brand" href="/">
-          Pursui Vuitton
+          Pursoui Vuitton
         </ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse  id="responsive-navbar-nav">
@@ -21,15 +21,6 @@ export default function NavBar() {
         <NavLink to="/shirts/new">Add New Shirt</NavLink>
         </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>
-      {/* <h2>
-        <Link to="/">Home</Link>
-      </h2>
-      <h2>
-        <Link to="/shirts">Shirts</Link>
-      </h2>
-      <button>
-        <Link to="/shirts/new">Add New Shirt</Link>
-      </button> */}
       </ReactBootStrap.Navbar>
   );
 }
