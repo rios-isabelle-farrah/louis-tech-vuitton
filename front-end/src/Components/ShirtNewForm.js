@@ -5,6 +5,7 @@ import { useHistory, withRouter } from "react-router-dom";
 import { apiURL } from "../util/apiURL.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./Styles/ShirtNewForm.css";
 
 const API = apiURL();
 function ShirtNewForm() {
@@ -13,7 +14,7 @@ function ShirtNewForm() {
     console.log("ABOUT TO SEND THE REQUEST");
     try {
       await axios.post(`${API}/shirts`, newShirt);
-      debugger;
+
       console.log("SUCCESS, SENDING YOU TO INDEX PAGE");
       history.push(`/shirts`);
     } catch (err) {
@@ -43,18 +44,24 @@ function ShirtNewForm() {
   return (
     <div className="New-Form">
       <form onSubmit={handleSubmit}>
-        <Form.Group className="item">
-          <FloatingLabel label="Item">
-            <Form.Control
-              id="type_of"
-              value={shirt.type_of}
-              type="text"
-              onChange={handleTextChange}
-              placeholder="Type of Shirt"
-              required
-            />
-          </FloatingLabel>
-        </Form.Group>
+        <div class="form-group">
+          {/* <label for="exampleFormControlSelect1"></label> */}
+          <select
+            onChange={handleTextChange}
+            required
+            class="form-control form-control-lg"
+            id="type_of"
+          >
+            <option>Type</option>
+            <option value="Tank">Tank</option>
+            <option value="Sweat-Shirt">Sweat-Shirt</option>
+            <option value="Long-Sleeve">Long-Sleeve</option>
+            <option value="Turtle-Neck">Turtle-Neck</option>
+           
+          </select>
+        </div>
+        <br></br>
+
         <Form.Group className="size">
           <FloatingLabel label="Size">
             <Form.Control
@@ -67,18 +74,23 @@ function ShirtNewForm() {
             />
           </FloatingLabel>
         </Form.Group>
-        <Form.Group className="color">
-          <FloatingLabel label="Color" htmlFor="color">
-            <Form.Control
-              id="color"
-              type="text"
-              name="color"
-              value={shirt.color}
-              placeholder="color"
-              onChange={handleTextChange}
-            />
-          </FloatingLabel>
-        </Form.Group>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1"></label>
+          <select
+            onChange={handleTextChange}
+            required
+            class="form-control form-control-lg"
+            id="color"
+          >
+            <option>Color</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+          </select>
+        </div>
+        <br></br>
+
         <Form.Group className="price">
           <FloatingLabel label="Price">
             <Form.Control
@@ -88,17 +100,18 @@ function ShirtNewForm() {
               value={shirt.price}
               placeholder="price"
               onChange={handleTextChange}
+              required
             />
           </FloatingLabel>
         </Form.Group>
         <Form.Group>
-          {/* <FloatingLabel Label="Availble" htmlFor="in_stock"> */}
           <Form.Check
             id="in_stock"
             type="checkbox"
             label="Availble"
             onChange={handleCheckboxChange}
             checked={shirt.in_stock}
+            required
           />
 
           {/* </FloatingLabel> */}

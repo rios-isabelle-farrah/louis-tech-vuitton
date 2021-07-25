@@ -1,0 +1,28 @@
+.Blue{
+    background-color: blue;
+}
+.Red{
+    background-color:red;
+}
+.Green{
+    background-color: green;
+}
+.Black{
+    background-color: black;
+}
+.White{
+    background-color: white;
+}
+.Yellow{
+    background-color: yellow;
+}
+
+.color-ul{
+    list-style: none;
+    display: flex;
+}
+.Blue,.Red,.Green,.Black,.Yellow,.White{
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}

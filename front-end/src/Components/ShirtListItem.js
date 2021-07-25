@@ -1,67 +1,163 @@
 import { CardGroup, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./ShirtListItem.css";
-import black from "./Images/Black_Turtle_Neck.png"
+import blackHoodie from "../Components/Images/blackHoodie.png";
+import blueTank from "../Components/Images/blueTank.png";
+import greenShort from "../Components/Images/greenShort.png";
+import yellowTurtle from "../Components/Images/yellowTurtle.png";
+import pinkLong from "../Components/Images/pinkLong.png";
+import whiteButton from "../Components/Images/whiteButton.png";
+import tankWhite from "../Components/Images/tankWhite.png";
+import blackTank from "../Components/Images/blackTank.png";
+ import blueLong from "../Components/Images/blueLong.png";
+import longBlack from "../Components/Images/longBlack.png";
+import whiteHoodie from "../Components/Images/whiteHoodie.png";
+import blueHoodie from "../Components/Images/blueHoodie.png";
+import blackTurtle from "../Components/Images/blackTurtle.png";
+import whiteTurtle from "../Components/Images/whiteTurtle.png";
+import blueTurtle from "../Components/Images/blueTurtle.png";
 
 
 function ShirtListItem({ shirt }) {
   return (
     <div className="shirt-details">
-      <Link to={`/shirts/${shirt.id}`} className="link">
-        <CardGroup /*style={{ width: '10rem', height: '20rem' }}*/>
+       <Link to={`/shirts/${shirt.id}`} className="link"> 
+
+        
+        <CardGroup /*style={{ width: '10rem', height: '14rem' }}*/>
         <Card >
+
+
+
+
+
         {shirt.color === "Blue" && shirt.type_of === "Tank" && (
           <Card.Img
             className="shirtIcon"
-            src="https://images.squarespace-cdn.com/content/v1/51c322cfe4b032aad705a0fc/1574713949307-XQO1SM9RSD8OHVD7N1WW/Tank-Royal.png?format=1000w"
+            src={blueTank}
             alt="icon"
-            style={{ width: '13rem', height: '20rem' }}
+            style={{ width: '10rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "White" && shirt.type_of === "Tank" && (
+          <Card.Img
+            className="shirtIcon"
+            src={tankWhite}
+            alt="icon"
+            style={{ width: '10rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "Black" && shirt.type_of === "Tank" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blackTank}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
 
         {shirt.color === "Green" && (
           <Card.Img
             className="shirtIcon"
-            src="https://www.pngkey.com/png/full/807-8075143_youth-heavy-cotton-t-shirt-mint-green-t.png"
+            src={greenShort}
             alt="icon"
-            style={{ width: '13rem', height: '20rem' }}
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
 
+        {shirt.color === "Black" && shirt.type_of === "Long-Sleeve" && (
+          <Card.Img
+            className="shirtIcon"
+            src={longBlack}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "White" && shirt.type_of === "Long-Sleeve" && (
+          <Card.Img
+            className="shirtIcon"
+            src={whiteButton}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "Blue" && shirt.type_of === "Long-Sleeve" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blueLong}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
         {shirt.color === "Pink" && shirt.type_of === "Long-Sleeve" && (
           <Card.Img
             className="shirtIcon"
-            src="https://jobbeedu.com/cms/wp-content/uploads/2016/11/unisex-long-sleeve-crew-dry-shirt-light-pink.png"
+            src={pinkLong}
             alt="icon"
-            style={{ width: '13rem', height: '20rem' }}
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
 
+        {shirt.color === "Black" && shirt.type_of === "Turtle-Neck" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blackTurtle}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
         {shirt.color === "Yellow" && shirt.type_of === "Turtle-Neck" && (
           <Card.Img
             className="shirtIcon"
-            src="https://www.lenahoschek.com/pub/media/catalog/product/cache/8c780148e21c4290ece7b34a361216c9/t/u/turtleneck-stanley-corn-vorne-aw1920-lena-hoschek-c-lupi-spuma-_kopie_kopie.png"
+            src={yellowTurtle}
             alt="icon"
-            style={{ width: '13rem', height: '20rem' }}
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
-
-        {shirt.color === "White" && shirt.type_of === "Button-Up" && (
+        {shirt.color === "White" && shirt.type_of === "Turtle-Neck" && (
           <Card.Img
             className="shirtIcon"
-            src="http://cdn.shopify.com/s/files/1/0661/4009/products/white_silver_crop_dffc8a38-9376-4fd5-9f80-ae00c8387246_grande.png?v=1618243605"
+            src={whiteTurtle}
             alt="icon"
-            style={{ width: '13rem', height: '20rem' }}
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "Blue" && shirt.type_of === "Turtle-Neck" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blueTurtle}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
 
+   
         {shirt.color === "Black" && shirt.type_of === "Sweat-Shirt" && (
           <Card.Img
             className="shirtIcon"
-            // src="https://magic-custom.com/14327-large_default/jackboys-black-hoodie-sweatshirt-photo-travis-scott.jpg"
-            src={black}
+            // src={blackHoodie}
+            src={blackHoodie}
             alt="icon"
-            style={{ width: '13rem', height: '20rem' }}
+             style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+
+        {shirt.color === "White" && shirt.type_of === "Sweat-Shirt" && (
+          <Card.Img
+            className="shirtIcon"
+            // src={blackHoodie}
+            src={whiteHoodie}
+            alt="icon"
+             style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "Blue" && shirt.type_of === "Sweat-Shirt" && (
+          <Card.Img
+            className="shirtIcon"
+            // src={blackHoodie}
+            src={blueHoodie}
+            alt="icon"
+             style={{ width: '13rem', height: '14rem' }}
           />
         )}
             <Card.Body>
@@ -76,66 +172,9 @@ function ShirtListItem({ shirt }) {
                 </Card.Subtitle>
             </Card.Body>
           </Card>
-        </CardGroup>
-
-        {/* {shirt.color === "Blue" && shirt.type_of === "Tank" && (
-          <img
-            className="shirtIcon"
-            src="https://images.squarespace-cdn.com/content/v1/51c322cfe4b032aad705a0fc/1574713949307-XQO1SM9RSD8OHVD7N1WW/Tank-Royal.png?format=1000w"
-            alt="icon"
-          ></img>
-        )}
-
-        {shirt.color === "Green" && (
-          <img
-            className="shirtIcon"
-            src="https://www.pngkey.com/png/full/807-8075143_youth-heavy-cotton-t-shirt-mint-green-t.png"
-            alt="icon"
-          ></img>
-        )}
-
-        {shirt.color === "Pink" && shirt.type_of === "Long-Sleeve" && (
-          <img
-            className="shirtIcon"
-            src="https://jobbeedu.com/cms/wp-content/uploads/2016/11/unisex-long-sleeve-crew-dry-shirt-light-pink.png"
-            alt="icon"
-          ></img>
-        )}
-
-        {shirt.color === "Yellow" && shirt.type_of === "Turtle-Neck" && (
-          <img
-            className="shirtIcon"
-            src="https://www.lenahoschek.com/pub/media/catalog/product/cache/8c780148e21c4290ece7b34a361216c9/t/u/turtleneck-stanley-corn-vorne-aw1920-lena-hoschek-c-lupi-spuma-_kopie_kopie.png"
-            alt="icon"
-          ></img>
-        )}
-
-        {shirt.color === "White" && shirt.type_of === "Button-Up" && (
-          <img
-            className="shirtIcon"
-            src="http://cdn.shopify.com/s/files/1/0661/4009/products/white_silver_crop_dffc8a38-9376-4fd5-9f80-ae00c8387246_grande.png?v=1618243605"
-            alt="icon"
-          ></img>
-        )}
-
-        {shirt.color === "Black" && shirt.type_of === "Sweat-Shirt" && (
-          <img
-            className="shirtIcon"
-            src="https://magic-custom.com/14327-large_default/jackboys-black-hoodie-sweatshirt-photo-travis-scott.jpg"
-            alt="icon"
-          ></img>
-        )} */}
-
-      {/* {`Type: ${shirt.type_of}`}
-      <br></br>
-      {`Color: ${shirt.color}`}
-      <br></br>
-      {`Price: $${shirt.price}.00`} */}
-
+             </CardGroup>
       </Link>
     </div>
-    //   </td>
-    // </tr>
   );
 }
 
