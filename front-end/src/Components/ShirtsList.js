@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { apiURL } from "../util/apiURL.js";
 import ShirtListItem from "./ShirtListItem";
+import { DropdownButton, Dropdown } from "react-bootstrap";
 
 import "./ShirtsList.css";
 
@@ -11,36 +12,19 @@ function ShirtsList() {
   const [shirts, setShirts] = useState([]);
   const [showColor, setShowColor] = useState([]);
   const [currentColor, setCurrentColor] = useState("All");
-  // const [filteredShirts, setFilteredShirts] = useState([]);
   let optionsArray = [];
 
   const getShirts = async () => {
     try {
       const res = await axios.get(`${API}/shirts`);
       setShirts(res.data.payload);
-      // setFilteredShirts(res.data.payload);
     } catch (err) {
       console.log(err);
     }
   };
 
   const filterColor = (e) => {
-    // let filArr = [];
-    setCurrentColor(e.target.value)
-    // if (e.target.value === "All") {
-    //   filArr = shirts;
-    // } else {
-    //   // debugger;
-    //   shirts.forEach((shirt) => {
-    //     // debugger
-    //     if (shirt.color.toLowerCase() === e.target.value.toLowerCase()) {
-    //       filArr.push(shirt);
-    //       // debugger
-    //     }
-    //   });
-    //   // debugger;
-    // }
-    // setFilteredShirts(filArr);
+    setCurrentColor(e);
   };
 
   const createColorOptions = () => {
@@ -70,29 +54,39 @@ function ShirtsList() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shirts]);
 
-  // useEffect(() => {
-  //   filterColor();
-  // }, [showColor]);
 
   return (
     <div className="Shirts">
-      <select onChange={filterColor}>
-        <option value="All">All</option>
-        {showColor.map((option,i) => {
-          return <option key={i} value={option}>{option}</option>;
+      <DropdownButton
+        onSelect={filterColor}
+        title="Filter Color"
+        variant="dark"
+        className="drop-down"
+      >
+        <Dropdown.Item eventKey="All">All</Dropdown.Item>
+        {showColor.map((option, i) => {
+          return (
+            <Dropdown.Item key={i} eventKey={option} variant="dark">
+              {option}
+            </Dropdown.Item>
+          );
         })}
-      </select>
+      </DropdownButton>
+
       <section>
         <ul className="ul-shirts">
           {shirts.map((shirt) => {
-            if(shirt.color.toLowerCase() === currentColor.toLowerCase() || currentColor === "All"){
+            if (
+              shirt.color.toLowerCase() === currentColor.toLowerCase() ||
+              currentColor === "All"
+            ) {
               return (
                 <li key={shirt.id} className="shirt-box">
                   {" "}
                   <ShirtListItem className="inside-box" shirt={shirt} />
                 </li>
               );
-            }else{
+            } else {
               return null;
             }
           })}
