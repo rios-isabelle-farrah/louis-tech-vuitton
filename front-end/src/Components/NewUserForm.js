@@ -12,14 +12,15 @@ function NewUserForm() {
   const history = useHistory();
 
   const [user, setUser] = useState({
-    name: "",
+    username: "",
     password: "",
   });
 
   const addUser = async (newUser) => {
     try {
       await axios.post(`${API}/users`, newUser);
-      history.push(`/users`);
+      // console.log(newUser)
+      goBack();
     } catch (error) {
       console.log(error);
     }
@@ -29,17 +30,13 @@ function NewUserForm() {
     setUser({ ...user, [event.target.id]: event.target.value });
   };
 
-  const handleCheckboxChange = () => {
-    setUser({ ...user, in_stock: !user.in_stock });
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     addUser(user);
   };
 
   const goBack = () => {
-    history.push("/users");
+    history.push("/shirts");
   };
 
   return (

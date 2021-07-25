@@ -19,29 +19,15 @@ const LoginForm = () => {
   // SHOW
   const getUser = async () => {
     try {
-      await axios.get(`${API}/users`, username);
-      console.log(username);
+      await axios.get(`${API}/users/login`, username);
+      // console.log(user);
       goBack();
     } catch (error) {
       console.log(error);
     }
   };
 
-  // const fetchShirt = async () => {
-  //   try {
-  //     const result = await axios.get(`${API}/shirts/${id}`);
-  //     // console.log(result);
-  //     setShirt(result.data.payload);
-  //     setColor(result.data.payload.color);
-  //     setType_of(result.data.payload.type_of);
-  //     // console.log(type_of);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   const handleTextChange = (event) => {
-    console.log(event.target.value);
     setUser({ ...user, [event.target.id]: event.target.value });
   };
 
