@@ -23,6 +23,7 @@ const LoginForm = () => {
       // console.log(user);
       goBack();
     } catch (error) {
+      // window.alert("No user exist")
       console.log(error);
     }
   };

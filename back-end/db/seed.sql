@@ -14,5 +14,5 @@ INSERT INTO users (username, password) VALUES
 ('FRios', 'cooking'),
 ('Cooper', 'Sweetie'),
 ('JonathanB', 'bags'),
-('CarloE', 'plants');
+('CarloE', 'plants'),
 ('FarrahR', 'mom_jokes');
