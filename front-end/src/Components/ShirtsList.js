@@ -54,7 +54,6 @@ function ShirtsList() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shirts]);
 
-
   return (
     <div className="Shirts">
       <DropdownButton
