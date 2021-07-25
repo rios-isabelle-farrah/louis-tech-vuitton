@@ -18,14 +18,13 @@ const createUser = async (newUser) => {
       "INSERT INTO users(username, password) VALUES($1, $2) RETURNING *",
       [username, password]
     );
-    console.log(theUser);
     return { sucess: true, payload: theUser };
   } catch (error) {
     return { sucess: false, payload: error };
   }
 };
 
-// SHOW - not Restful
+// not RESTful
 const getUser = async (user, pw) => {
   try {
     const user1 = await db.oneOrNone(`SELECT * FROM users WHERE username = $1 AND password = $2`, [user, pw]);
@@ -37,7 +36,6 @@ const getUser = async (user, pw) => {
 };
 
 // UPDATE
-// create - update password
 const updateUser = async (id, user) => {
   const { username, password } = user;
   try {
@@ -52,7 +50,6 @@ const updateUser = async (id, user) => {
 
 
 // DESTROY
-// delete user account
 const deleteUser = async (id) => {
   try {
     const query = `DELETE FROM users WHERE id = $1 RETURNING *`;

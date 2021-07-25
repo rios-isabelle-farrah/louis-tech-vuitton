@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { ButtonGroup, FloatingLabel } from "react-bootstrap";
-import { useHistory, withRouter, Link, useParams } from "react-router-dom";
+import { useHistory, withRouter, Link } from "react-router-dom";
 import { apiURL } from "../util/apiURL.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -20,7 +20,7 @@ const LoginForm = ({ setCurrentUser }) => {
   const getUser = async () => {
     try {
       const res = await axios.get(`${API}/users/login?user=${user.username}&pw=${user.password}`);
-     return res.data.payload.username
+     return res.data.payload.username;
     } catch (error) {
       console.log(error);
     }
@@ -32,9 +32,9 @@ const LoginForm = ({ setCurrentUser }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const u = await getUser();
-    if (u) {
-      setCurrentUser(u)}
+    const validUser = await getUser();
+    if (validUser) {
+      setCurrentUser(validUser)}
     goBack();
   };
 
