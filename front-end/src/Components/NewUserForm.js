@@ -14,6 +14,7 @@ function NewUserForm() {
   const [user, setUser] = useState({
     username: "",
     password: "",
+    exist: ""
   });
 
   const addUser = async (newUser) => {
@@ -82,3 +83,5 @@ function NewUserForm() {
   );
 }
 export default withRouter(NewUserForm);
+
+
