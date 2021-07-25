@@ -29,11 +29,10 @@ function ShirtsList() {
         <ul className="ul-shirts">
           {shirts.map((shirt) => {
             return (
-              <li className="shirt-box">
+              <li className="shirt-box" key={shirt.id}>
                 {" "}
                 <ShirtListItem
                   className="inside-box"
-                  key={shirt.id}
                   shirt={shirt}
                 />
               </li>

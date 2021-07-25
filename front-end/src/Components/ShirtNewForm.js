@@ -7,19 +7,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 const API = apiURL();
+
 function ShirtNewForm() {
-  let history = useHistory();
-  const addShirt = async (newShirt) => {
-    console.log("ABOUT TO SEND THE REQUEST");
-    try {
-      await axios.post(`${API}/shirts`, newShirt);
-      debugger;
-      console.log("SUCCESS, SENDING YOU TO INDEX PAGE");
-      history.push(`/shirts`);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const history = useHistory();
+  
   const [shirt, setShirt] = useState({
     type_of: "",
     size: "",
@@ -27,22 +18,35 @@ function ShirtNewForm() {
     price: "",
     in_stock: false,
   });
+
+  const addShirt = async (newShirt) => {
+    try {
+      await axios.post(`${API}/shirts`, newShirt);
+      goBack();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleTextChange = (event) => {
     setShirt({ ...shirt, [event.target.id]: event.target.value });
   };
+
   const handleCheckboxChange = () => {
     setShirt({ ...shirt, in_stock: !shirt.in_stock });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     addShirt(shirt);
   };
+
   const goBack = () => {
     history.push("/shirts");
   };
+
   return (
-    <div className="New-Form">
-      <form onSubmit={handleSubmit}>
+      <form className="New-Form" onSubmit={handleSubmit}>
         <Form.Group className="item">
           <FloatingLabel label="Item">
             <Form.Control
@@ -91,6 +95,7 @@ function ShirtNewForm() {
             />
           </FloatingLabel>
         </Form.Group>
+
         <Form.Group>
           {/* <FloatingLabel Label="Availble" htmlFor="in_stock"> */}
           <Form.Check
@@ -100,11 +105,11 @@ function ShirtNewForm() {
             onChange={handleCheckboxChange}
             checked={shirt.in_stock}
           />
-
           {/* </FloatingLabel> */}
         </Form.Group>
+
         <br />
-        <ButtonGroup>
+        <ButtonGroup className="form-btns">
           <Button variant="dark" type="submit">
             Add New
           </Button>
@@ -113,7 +118,6 @@ function ShirtNewForm() {
           </Button>
         </ButtonGroup>
       </form>
-    </div>
   );
 }
 export default withRouter(ShirtNewForm);
