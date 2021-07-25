@@ -1,9 +1,10 @@
+//Dependencies
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { apiURL } from "../util/apiURL.js";
 import ShirtListItem from "./ShirtListItem";
 import { DropdownButton, Dropdown } from "react-bootstrap";
-
 import "./ShirtsList.css";
 
 const API = apiURL();
@@ -11,7 +12,7 @@ const API = apiURL();
 function ShirtsList() {
   const [shirts, setShirts] = useState([]);
   const [showColor, setShowColor] = useState([]);
-  const [currentColor, setCurrentColor] = useState("All");
+  const [currentColor, setCurrentColor] = useState("ALL");
   let optionsArray = [];
 
   const getShirts = async () => {
@@ -23,7 +24,7 @@ function ShirtsList() {
     }
   };
 
-  const filterColor = (e) => {
+  const handleColorPicked = (e) => {
     setCurrentColor(e);
   };
 
@@ -38,8 +39,8 @@ function ShirtsList() {
   const removeDups = (colors) => {
     let newArray = [];
     for (let i = 0; i < colors.length; i++) {
-      if (!newArray.includes(colors[i])) {
-        newArray.push(colors[i]);
+      if (!newArray.includes(colors[i].toUpperCase())) {
+        newArray.push(colors[i].toUpperCase());
       }
     }
     return newArray;
@@ -57,12 +58,12 @@ function ShirtsList() {
   return (
     <div className="Shirts">
       <DropdownButton
-        onSelect={filterColor}
+        onSelect={handleColorPicked}
         title="Filter Color"
         variant="dark"
         className="drop-down"
       >
-        <Dropdown.Item eventKey="All">All</Dropdown.Item>
+        <Dropdown.Item eventKey="ALL">All</Dropdown.Item>
         {showColor.map((option, i) => {
           return (
             <Dropdown.Item key={i} eventKey={option} variant="dark">
@@ -77,7 +78,7 @@ function ShirtsList() {
           {shirts.map((shirt) => {
             if (
               shirt.color.toLowerCase() === currentColor.toLowerCase() ||
-              currentColor === "All"
+              currentColor === "ALL"
             ) {
               return (
                 <li key={shirt.id} className="shirt-box">
@@ -96,4 +97,3 @@ function ShirtsList() {
 }
 
 export default ShirtsList;
-
