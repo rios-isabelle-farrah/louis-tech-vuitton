@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import "./Styles/ShirtNewForm.css";
 
 const API = apiURL();
+
 function ShirtNewForm() {
   let history = useHistory();
   const addShirt = async (newShirt) => {
@@ -28,19 +29,33 @@ function ShirtNewForm() {
     price: "",
     in_stock: false,
   });
+
+  const addShirt = async (newShirt) => {
+    try {
+      await axios.post(`${API}/shirts`, newShirt);
+      goBack();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleTextChange = (event) => {
     setShirt({ ...shirt, [event.target.id]: event.target.value });
   };
+
   const handleCheckboxChange = () => {
     setShirt({ ...shirt, in_stock: !shirt.in_stock });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     addShirt(shirt);
   };
+
   const goBack = () => {
     history.push("/shirts");
   };
+
   return (
     <div className="New-Form">
       <form onSubmit={handleSubmit}>
@@ -104,6 +119,7 @@ function ShirtNewForm() {
             />
           </FloatingLabel>
         </Form.Group>
+
         <Form.Group>
           <Form.Check
             id="in_stock"
@@ -113,11 +129,11 @@ function ShirtNewForm() {
             checked={shirt.in_stock}
             required
           />
-
           {/* </FloatingLabel> */}
         </Form.Group>
+
         <br />
-        <ButtonGroup>
+        <ButtonGroup className="form-btns">
           <Button variant="dark" type="submit">
             Add New
           </Button>
@@ -126,7 +142,7 @@ function ShirtNewForm() {
           </Button>
         </ButtonGroup>
       </form>
-    </div>
+      </div>
   );
 }
 export default withRouter(ShirtNewForm);

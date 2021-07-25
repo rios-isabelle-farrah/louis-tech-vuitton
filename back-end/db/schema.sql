@@ -11,3 +11,9 @@ CREATE TABLE shirts (
     price NUMERIC,
     in_stock BOOLEAN
 );
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username TEXT,
+    password TEXT
+);

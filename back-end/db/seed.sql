@@ -8,4 +8,11 @@ INSERT INTO shirts (type_of, size, color, price, in_stock) VALUES
 ('Button-Up','Medium', 'White', 20,false),
 ('Sweat-Shirt','Medium', 'Black', 20,true);
 
-
+INSERT INTO users (username, password) VALUES
+('JBedon', 'hats'),
+('CEcheverri', 'Ra'),
+('FRios', 'cooking'),
+('Cooper', 'Sweetie'),
+('JonathanB', 'bags'),
+('CarloE', 'plants'),
+('FarrahR', 'mom_jokes');

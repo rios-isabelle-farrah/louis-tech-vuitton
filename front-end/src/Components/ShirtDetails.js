@@ -39,11 +39,11 @@ function ShirtDetails() {
   const fetchShirt = async () => {
     try {
       const result = await axios.get(`${API}/shirts/${id}`);
-      console.log(result);
+      // console.log(result);
       setShirt(result.data.payload);
       setColor(result.data.payload.color);
       setType_of(result.data.payload.type_of);
-      console.log(type_of);
+      // console.log(type_of);
     } catch (err) {
       console.log(err);
     }

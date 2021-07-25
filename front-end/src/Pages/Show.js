@@ -1,22 +1,16 @@
 import ShirtDetails from "../Components/ShirtDetails";
 
-import "../Components/Styles/Show.css"
+import "../Components/Styles/Show.css";
 
-const showShirt = (theShirt)=>{
-console.log(theShirt)
-}
-
-
+const showShirt = (theShirt) => {
+  console.log(theShirt);
+};
 
 function Show() {
   return (
     <div className="Show">
       {/* <h2>Show</h2> */}
-
-
-
-
-      <ShirtDetails showShirt={showShirt}/>
+      <ShirtDetails showShirt={showShirt} />
     </div>
   );
 }

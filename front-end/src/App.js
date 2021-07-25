@@ -1,17 +1,21 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NavBar from "./Components/NavBar.js";
+import NewUser from "./Pages/NewUser.js";
 import Index from "./Pages/Index.js";
+import Login from "./Pages/Login.js";
 import Home from "./Pages/Home.js";
 import Show from "./Pages/Show.js";
-import New from "./Pages/New.js";
-import NavBar from "./Components/NavBar.js";
 import Edit from "./Pages/Edit.js";
+import New from "./Pages/New.js";
+import { useState } from "react";
 
 function App() {
+const [ currentUser, setCurrentUser ] = useState(null)
+
   return (
     <div className="App">
       <Router>
         <NavBar className="nav"/>
-        <main>
           <Switch>
             <Route exact path="/shirts/:id/edit">
               <Edit />
@@ -23,13 +27,24 @@ function App() {
               <Show />
             </Route>
             <Route exact path="/shirts">
-              <Index />
+              <Index currentUser={currentUser}/>
+            </Route>
+            <Route exact path="/users/login/">
+              <Login setCurrentUser={setCurrentUser} />
+            </Route>
+            <Route exact path="/users/login/new_user">
+              <NewUser />
+            </Route>
+            <Route exact path="/users/login/">
+              <Login />
+            </Route>
+            <Route exact path="/users/login/new_user">
+              <NewUser />
             </Route>
             <Route exact path="/">
               <Home />
             </Route>
           </Switch>
-        </main>
       </Router>
     </div>
   );

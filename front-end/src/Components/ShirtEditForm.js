@@ -52,7 +52,7 @@ function ShirtEditForm() {
   };
 
   return (
-    <div className="Edit">
+    <div className="Edit-Form">
       <form onSubmit={handleSubmit}>
         <Form.Group className="type_of">
           <Form.Label htmlFor="type_of">Item:</Form.Label>
