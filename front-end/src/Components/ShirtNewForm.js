@@ -30,7 +30,6 @@ function ShirtNewForm() {
   });
   const handleTextChange = (event) => {
     setShirt({ ...shirt, [event.target.id]: event.target.value });
-
   };
   const handleCheckboxChange = () => {
     setShirt({ ...shirt, in_stock: !shirt.in_stock });
@@ -38,7 +37,6 @@ function ShirtNewForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     addShirt(shirt);
-
   };
   const goBack = () => {
     history.push("/shirts");
@@ -46,33 +44,23 @@ function ShirtNewForm() {
   return (
     <div className="New-Form">
       <form onSubmit={handleSubmit}>
-        {/* <label for="exampleFormControlSelect1"></label>
-    <select  class="form-control form-control-lg" id="exampleFormControlSelect1"  class="form-control form-control-lg">
-      <option>Type</option>
-      <option value="Tank-Top">Tank-Top</option>
-      <option value="Sweat-Shirt">Sweat-Shirt</option>
-      <option value="Button-Up">Button-Up</option>
-      <option value="Turtle-Neck">Turtle-Neck</option>
-      <option value="Short-Sleeve">Short-Sleeve</option>
-    </select> */}
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Example select</label>
+          {/* <label for="exampleFormControlSelect1"></label> */}
           <select
             onChange={handleTextChange}
             required
             class="form-control form-control-lg"
             id="type_of"
-            class="form-control form-control-lg"
           >
             <option>Type</option>
             <option value="Tank">Tank</option>
             <option value="Sweat-Shirt">Sweat-Shirt</option>
-            <option value="Short-Sleeve">Long-Sleeve</option>
+            <option value="Long-Sleeve">Long-Sleeve</option>
+            <option value="Turtle-Neck">Turtle-Neck</option>
+           
           </select>
         </div>
         <br></br>
-
-   
 
         <Form.Group className="size">
           <FloatingLabel label="Size">
@@ -86,15 +74,14 @@ function ShirtNewForm() {
             />
           </FloatingLabel>
         </Form.Group>
-      
-                <div class="form-group">
-          <label for="exampleFormControlSelect1">Color</label>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1"></label>
           <select
             onChange={handleTextChange}
             required
             class="form-control form-control-lg"
             id="color"
-            class="form-control form-control-lg"
           >
             <option>Color</option>
             <option value="Black">Black</option>
@@ -118,7 +105,6 @@ function ShirtNewForm() {
           </FloatingLabel>
         </Form.Group>
         <Form.Group>
-          {/* <FloatingLabel Label="Availble" htmlFor="in_stock"> */}
           <Form.Check
             id="in_stock"
             type="checkbox"

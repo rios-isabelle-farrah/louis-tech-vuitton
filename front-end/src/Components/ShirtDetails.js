@@ -10,6 +10,15 @@ import greenShort from "../Components/Images/greenShort.png";
 import yellowTurtle from "../Components/Images/yellowTurtle.png";
 import pinkLong from "../Components/Images/pinkLong.png";
 import whiteButton from "../Components/Images/whiteButton.png";
+import tankWhite from "../Components/Images/tankWhite.png";
+import blackTank from "../Components/Images/blackTank.png";
+ import blueLong from "../Components/Images/blueLong.png";
+import longBlack from "../Components/Images/longBlack.png";
+import whiteHoodie from "../Components/Images/whiteHoodie.png";
+import blueHoodie from "../Components/Images/blueHoodie.png";
+import blackTurtle from "../Components/Images/blackTurtle.png";
+import whiteTurtle from "../Components/Images/whiteTurtle.png";
+import blueTurtle from "../Components/Images/blueTurtle.png";
 
 const API = apiURL();
 function ShirtDetails() {
@@ -57,12 +66,28 @@ function ShirtDetails() {
       {/* <div className="card-div"> */}
 
       <div className="text-shirt-info">
-        {shirt.color === "Blue" && shirt.type_of === "Tank" && (
+      {shirt.color === "Blue" && shirt.type_of === "Tank" && (
           <Card.Img
             className="shirtIcon"
             src={blueTank}
             alt="icon"
-            style={{ width: "13rem", height: "14rem" }}
+            style={{ width: '10rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "White" && shirt.type_of === "Tank" && (
+          <Card.Img
+            className="shirtIcon"
+            src={tankWhite}
+            alt="icon"
+            style={{ width: '10rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "Black" && shirt.type_of === "Tank" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blackTank}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
 
@@ -71,46 +96,109 @@ function ShirtDetails() {
             className="shirtIcon"
             src={greenShort}
             alt="icon"
-            style={{ width: "13rem", height: "14rem" }}
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
 
+        {shirt.color === "Black" && shirt.type_of === "Long-Sleeve" && (
+          <Card.Img
+            className="shirtIcon"
+            src={longBlack}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "White" && shirt.type_of === "Long-Sleeve" && (
+          <Card.Img
+            className="shirtIcon"
+            src={whiteButton}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "Blue" && shirt.type_of === "Long-Sleeve" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blueLong}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
         {shirt.color === "Pink" && shirt.type_of === "Long-Sleeve" && (
           <Card.Img
             className="shirtIcon"
             src={pinkLong}
             alt="icon"
-            style={{ width: "13rem", height: "14rem" }}
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
 
+        {shirt.color === "Black" && shirt.type_of === "Turtle-Neck" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blackTurtle}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
         {shirt.color === "Yellow" && shirt.type_of === "Turtle-Neck" && (
           <Card.Img
             className="shirtIcon"
             src={yellowTurtle}
             alt="icon"
-            style={{ width: "13rem", height: "14rem" }}
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
-
-        {shirt.color === "White" && shirt.type_of === "Button-Up" && (
+        {shirt.color === "White" && shirt.type_of === "Turtle-Neck" && (
           <Card.Img
             className="shirtIcon"
-            src={whiteButton}
+            src={whiteTurtle}
             alt="icon"
-            style={{ width: "13rem", height: "14rem" }}
+            style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "Blue" && shirt.type_of === "Turtle-Neck" && (
+          <Card.Img
+            className="shirtIcon"
+            src={blueTurtle}
+            alt="icon"
+            style={{ width: '13rem', height: '14rem' }}
           />
         )}
 
+   
         {shirt.color === "Black" && shirt.type_of === "Sweat-Shirt" && (
           <Card.Img
             className="shirtIcon"
             // src={blackHoodie}
             src={blackHoodie}
             alt="icon"
-            style={{ width: "13rem", height: "14rem" }}
+             style={{ width: '13rem', height: '14rem' }}
           />
         )}
+
+        {shirt.color === "White" && shirt.type_of === "Sweat-Shirt" && (
+          <Card.Img
+            className="shirtIcon"
+            // src={blackHoodie}
+            src={whiteHoodie}
+            alt="icon"
+             style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+        {shirt.color === "Blue" && shirt.type_of === "Sweat-Shirt" && (
+          <Card.Img
+            className="shirtIcon"
+            // src={blackHoodie}
+            src={blueHoodie}
+            alt="icon"
+             style={{ width: '13rem', height: '14rem' }}
+          />
+        )}
+
+
+
+
 
         <div className="just-text">
           <h3> {type_of}</h3>
