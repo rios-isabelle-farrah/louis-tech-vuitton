@@ -11,17 +11,17 @@ const API = apiURL();
 
 function ShirtNewForm() {
   let history = useHistory();
-  const addShirt = async (newShirt) => {
-    console.log("ABOUT TO SEND THE REQUEST");
-    try {
-      await axios.post(`${API}/shirts`, newShirt);
+  // const addShirt = async (newShirt) => {
+  //   console.log("ABOUT TO SEND THE REQUEST");
+  //   try {
+  //     await axios.post(`${API}/shirts`, newShirt);
 
-      console.log("SUCCESS, SENDING YOU TO INDEX PAGE");
-      history.push(`/shirts`);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  //     console.log("SUCCESS, SENDING YOU TO INDEX PAGE");
+  //     history.push(`/shirts`);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
   const [shirt, setShirt] = useState({
     type_of: "",
     size: "",
