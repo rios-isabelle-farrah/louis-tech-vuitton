@@ -33,7 +33,7 @@ function ShirtColors({ color, type_of }) {
 
     setShirtType(type_of.split("-")[0]);
     // setShirtColor(color)
-    console.log("the shirt type", shirtType);
+    // console.log("the shirt type", shirtType);
     let stringType = allTypes.map((el) => {
       return {
         theColor: el.split("/")[3].split(".")[0].split("_")[0],
@@ -41,18 +41,18 @@ function ShirtColors({ color, type_of }) {
       };
     });
 
-    let colorArray = stringType.map((el) => {
-      return el.theColor;
-    });
+    // let colorArray = stringType.map((el) => {
+    //   return el.theColor;
+    // });
     let typeArray = stringType.map((el) => {
       return el.theType;
     });
-    console.log("typeArray", typeArray);
-    console.log("colorArray", colorArray);
-    console.log("stringTye", stringType);
+    // console.log("typeArray", typeArray);
+    // console.log("colorArray", colorArray);
+    // console.log("stringTye", stringType);
 
     if (typeArray.includes(shirtType)) {
-      console.log("yes type");
+      // console.log("yes type");
       let filteredShirtsforcolor = stringType
         .filter((el) => {
           return el.theType === shirtType;
@@ -61,12 +61,12 @@ function ShirtColors({ color, type_of }) {
           return el.theColor;
         });
       setAllColors(filteredShirtsforcolor);
-      console.log("fil", allColors);
+      // console.log("fil", allColors);
     }
 
     // console.log(color+type_of)
 
-    console.log(shirtType);
+    // console.log(shirtType);
   };
 
   // const changeColor = (color)=>{

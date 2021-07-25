@@ -1,34 +1,39 @@
 const express = require("express");
 const users = express.Router();
-const { getAllUsers } = require("../queries/users");
-const { getUser } = require("../queries/users");
-const { deleteUser } = require("../queries/users");
-const { updateUser } = require("../queries/users");
-const { createUser } = require("../queries/users");
+const {
+  getAllUsers,
+  getUser,
+  deleteUser,
+  updateUser,
+  createUser,
+} = require("../queries/users");
 
 // INDEX
 users.get("/", async (req, res) => {
   const allUsers = await getAllUsers();
-  res.json({ success: true, payload: allUsers });
+  res.json(allUsers);
 });
 
+// CREATE
 users.post("/", async (req, res) => {
   const newuser = req.body;
   const result = await createUser(newuser);
-//   console.log(result);
-  res.json({ success: true, payload: result });
+  //   console.log(result);
+  res.json(result);
 });
 
+// SHOW
 users.get("/:id", async (req, res) => {
   const { id } = req.params;
   const user = await getUser(id);
   if (user) {
-    res.json({ success: true, payload: user });
+    res.json(user);
   } else {
     res.redirect("/404");
   }
 });
 
+// UPDATE
 users.put("/:id", async (req, res) => {
   const { body, params } = req;
   const { username, password } = body;
@@ -36,18 +41,19 @@ users.put("/:id", async (req, res) => {
     res.status(422).json({
       error: true,
       success: false,
-      message: "not!",
+      message: "Invalid entry",
     });
   } else {
     const result = await updateUser(params.id, body);
-    res.json({ success: true, payload: result });
+    res.json(result);
   }
 });
 
+// DESTROY
 users.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const deletedUser = await deleteUser(id);
-  res.json({ success: true, payload: deletedUser });
+  res.json(deletedUser);
 });
 
 module.exports = users;
