@@ -1,27 +1,8 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
-
-
-
 nav{
   padding-right: 25px;
 }
 
 nav a {
-  /* display: flex; */
-  /* justify-content: space-around; */
-  /* background-color: goldenrod; */
   text-decoration: none;
   color: lightgrey;
   margin: 25px;
@@ -31,78 +12,43 @@ nav a:hover{
   color: rgba(255, 217, 0, 0.705);
 }
 
-h2{
+h2 {
   padding: 25px;
-}
-
-nav button {
-  /* margin: 20px; */
-  /* padding: 0;
-  font-size: x-large;
-  font-weight: bold;
-  height: 50px;
-  width: 200px;
-  align-self: center; */
+  text-align: center;
 }
 
 main {
-  /* border: chartreuse solid 1px;;
-  margin: 0 10px; */
+  text-align: center;
+}
+
+.form-check{
+  text-align: left;
 }
 
 form {
   padding: 2%; 
   width: 500px;
-  /* display: flex;
-  flex-direction: column; */
-  /* align-self: space-between; */
-  /* border: coral solid 1px; */
 }
 
 form input{
   width: 60%;
- /* height: 20px; */
-  /* margin: 2px */
 }
 
 form button {
   width: 100px;
-  /* margin: auto; */
 }
 
-.item{
+.New-Form, .Login-Form, .New-User-Form {
+  margin: auto;
+}
+
+.size, .edit_price, .color, .price, .item {
   margin-bottom: 15px;
 }
 
-.price{
-  margin-bottom: 15px;
-}
-
-.color{
-  margin-bottom: 15px;
-}
-
-.size{
-  margin-bottom: 15px;
-}
-
-.type_of{
+.type_of, .edit_size, .edit_color{
   margin-bottom: 10px;
 }
-
-.edit_size{
-  margin-bottom: 10px;
-}
-
-.edit_color{
-  margin-bottom: 10px;
-}
-
-.edit_price{
-  margin-bottom: 15px;
-}
-
-
 
 /* SEE BELOW FOR CSS RESET */
 /* html, body, header, nav, h1, a,

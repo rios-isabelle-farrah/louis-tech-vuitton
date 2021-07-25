@@ -6,13 +6,13 @@ import New from "./Pages/New.js";
 import NavBar from "./Components/NavBar.js";
 import Edit from "./Pages/Edit.js";
 import Login from "./Pages/Login.js";
+import NewUser from "./Pages/NewUser.js";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <NavBar className="nav"/>
-        <main>
           <Switch>
             <Route exact path="/shirts/:id/edit">
               <Edit />
@@ -26,14 +26,16 @@ function App() {
             <Route exact path="/shirts">
               <Index />
             </Route>
-            <Route exact path="/users/:username/">
+            <Route exact path="/users/login/">
               <Login />
+            </Route>
+            <Route exact path="/users/login/new_user">
+              <NewUser />
             </Route>
             <Route exact path="/">
               <Home />
             </Route>
           </Switch>
-        </main>
       </Router>
     </div>
   );

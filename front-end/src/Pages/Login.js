@@ -2,10 +2,10 @@ import LoginForm from "../Components/LoginForm";
 
 function Login() {
   return (
-    <div className="login">
+    <main className="login">
       <h2>User Login</h2>
       <LoginForm />
-    </div>
+    </main>
   );
 }
 

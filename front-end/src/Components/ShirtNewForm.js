@@ -41,8 +41,7 @@ function ShirtNewForm() {
     history.push("/shirts");
   };
   return (
-    <div className="New-Form">
-      <form onSubmit={handleSubmit}>
+      <form className="New-Form" onSubmit={handleSubmit}>
         <Form.Group className="item">
           <FloatingLabel label="Item">
             <Form.Control
@@ -91,6 +90,7 @@ function ShirtNewForm() {
             />
           </FloatingLabel>
         </Form.Group>
+
         <Form.Group>
           {/* <FloatingLabel Label="Availble" htmlFor="in_stock"> */}
           <Form.Check
@@ -100,11 +100,11 @@ function ShirtNewForm() {
             onChange={handleCheckboxChange}
             checked={shirt.in_stock}
           />
-
           {/* </FloatingLabel> */}
         </Form.Group>
+
         <br />
-        <ButtonGroup>
+        <ButtonGroup className="form-btns">
           <Button variant="dark" type="submit">
             Add New
           </Button>
@@ -113,7 +113,6 @@ function ShirtNewForm() {
           </Button>
         </ButtonGroup>
       </form>
-    </div>
   );
 }
 export default withRouter(ShirtNewForm);

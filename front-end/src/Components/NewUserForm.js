@@ -1,62 +1,50 @@
 import axios from "axios";
 import { useState } from "react";
-import { ButtonGroup, FloatingLabel } from "react-bootstrap";
-import { useHistory, withRouter, Link, useParams } from "react-router-dom";
+import { ButtonGroup, FloatingLabel, Form, Button } from "react-bootstrap";
+import { useHistory, withRouter, Link } from "react-router-dom";
 import { apiURL } from "../util/apiURL.js";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+// import Form from "react-bootstrap/Form";
+// import Button from "react-bootstrap/Button";
 
-const LoginForm = () => {
-  const API = apiURL();
+const API = apiURL();
+
+function NewUserForm() {
   const history = useHistory();
-  const { username } = useParams();
 
   const [user, setUser] = useState({
-    username: "",
+    name: "",
     password: "",
   });
 
-  // SHOW
-  const getUser = async () => {
+  const addUser = async (newUser) => {
     try {
-      await axios.get(`${API}/users`, username);
-      console.log(username);
-      goBack();
+      await axios.post(`${API}/users`, newUser);
+      history.push(`/users`);
     } catch (error) {
       console.log(error);
     }
   };
 
-  // const fetchShirt = async () => {
-  //   try {
-  //     const result = await axios.get(`${API}/shirts/${id}`);
-  //     // console.log(result);
-  //     setShirt(result.data.payload);
-  //     setColor(result.data.payload.color);
-  //     setType_of(result.data.payload.type_of);
-  //     // console.log(type_of);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   const handleTextChange = (event) => {
-    console.log(event.target.value);
     setUser({ ...user, [event.target.id]: event.target.value });
+  };
+
+  const handleCheckboxChange = () => {
+    setUser({ ...user, in_stock: !user.in_stock });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getUser(user);
+    addUser(user);
   };
 
   const goBack = () => {
-    history.push("/shirts");
+    history.push("/users");
   };
 
   return (
-      <form className="Login-Form" onSubmit={handleSubmit}>
-        <Form.Group className="item">
+      <form className="New-User-Form" onSubmit={handleSubmit}>
+      <Form.Group className="item">
           <FloatingLabel label="Username">
             <Form.Control
               id="username"
@@ -68,7 +56,7 @@ const LoginForm = () => {
             />
           </FloatingLabel>
         </Form.Group>
-
+        
         <Form.Group className="item">
           <FloatingLabel label="Password">
             <Form.Control
@@ -84,16 +72,16 @@ const LoginForm = () => {
         <br />
         <ButtonGroup>
           <Button variant="dark" type="submit">
-            Sign in
+            Submit
           </Button>
           <Button variant="light" onClick={goBack}>
             Go back
           </Button>
-          <Link to={`/users/login/new_user`}>
-            <Button variant="dark">New User</Button>
+          <Link to={`/users/login`}>
+            <Button variant="dark">Sign in</Button>
           </Link>
         </ButtonGroup>
       </form>
   );
-};
-export default withRouter(LoginForm);
+}
+export default withRouter(NewUserForm);
