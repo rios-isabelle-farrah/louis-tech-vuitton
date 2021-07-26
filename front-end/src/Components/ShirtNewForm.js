@@ -76,7 +76,6 @@ function ShirtNewForm() {
           </select>
         </div>
         <br></br>
-
         <Form.Group className="size">
           <FloatingLabel label="Size">
             <Form.Control
