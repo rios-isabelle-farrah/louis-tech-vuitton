@@ -1,13 +1,13 @@
-import { Carousel, Container, Button } from "react-bootstrap";
+// import { Carousel, Container, Button } from "react-bootstrap";
 
-import BlackTurtleNeck from "./Images/Black_Turtle_Neck.png";
-import GreenTankTop from "./Images/Green_Tank_Top.png"
-import YellowButtonUp from "./Images/Yellow_Button_Up.png"
+// import BlackTurtleNeck from "./Images/Black_Turtle_Neck.png";
+// import GreenTankTop from "./Images/Green_Tank_Top.png"
+// import YellowButtonUp from "./Images/Yellow_Button_Up.png"
 import "./HomeDetails.css"
 export default function Home() {
   return (
     <div className="home-details">
-      <Container className="home-container">
+      {/* <Container className="home-container">
       <Carousel className="carousel" variant="dark" style={{ width: '50rem', height: '700px' }}>
         <Carousel.Item>
           <img
@@ -54,8 +54,8 @@ export default function Home() {
         </Carousel.Item>
       </Carousel>
           {/* <h3>To the greatest Apparel app!</h3> */}
-      </Container>
-        <Button className="shop-button" href="/shirts" variant="dark">Shop</Button>
+      {/* </Container>  */}
+        {/* // <Button className="shop-button" href="/shirts" variant="dark">Shop</Button> */}
 
     </div>
   );

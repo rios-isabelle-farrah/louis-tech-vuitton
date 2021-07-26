@@ -13,7 +13,7 @@ import blackTank from "../Components/Images/blackTank.png";
 import longBlack from "../Components/Images/longBlack.png";
 import whiteHoodie from "../Components/Images/whiteHoodie.png";
 import blueHoodie from "../Components/Images/blueHoodie.png";
-import blackTurtle from "../Components/Images/blackTurtle.png";
+// import blackTurtle from "../Components/Images/blackTurtle.png";
 import whiteTurtle from "../Components/Images/whiteTurtle.png";
 import blueTurtle from "../Components/Images/blueTurtle.png";
 
@@ -98,14 +98,14 @@ function ShirtListItem({ shirt }) {
           />
         )}
 
-        {shirt.color === "Black" && shirt.type_of === "Turtle-Neck" && (
+        {/* {shirt.color === "Black" && shirt.type_of === "Turtle-Neck" && (
           <Card.Img
             className="shirtIcon"
             src={blackTurtle}
             alt="icon"
             style={{ width: '13rem', height: '14rem' }}
           />
-        )}
+        )} */}
         {shirt.color === "Yellow" && shirt.type_of === "Turtle-Neck" && (
           <Card.Img
             className="shirtIcon"
