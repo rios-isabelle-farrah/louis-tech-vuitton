@@ -1,0 +1,73 @@
+
+article{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items:center;
+    margin-bottom: 20%;
+}
+
+.shirtIcon{
+    /* border:solid 3px red; */
+    width: 90%;
+    height:40% ;
+/* 
+    padding-bottom: 0rem;
+    margin-bottom: 0rem; */
+
+
+    
+
+ 
+  
+    
+ 
+}
+.shirt-show{
+    /* border:solid 3px blue; */
+    /* padding-right:8%;  */
+    width: 190px;
+}
+ .text-shirt-info{
+    margin-top:15%;
+    display:flex;
+    flex-direction: column;
+    border:solid 1px lightgray;
+    align-items: center;
+    width: 40%;
+    height: 80%;
+    border-radius: 30%;
+} 
+
+.card-div{
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height:900px;
+ 
+  
+
+
+}
+.price-p{
+    padding-bottom: 0rem;
+    margin-bottom: 0rem;
+}
+
+   
+
+
+.just-text{
+    /* border: goldenrod solid 3px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+
+}
+.shirt-box{
+ 
+    display: flex;
+}
