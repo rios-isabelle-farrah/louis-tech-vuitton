@@ -1,7 +1,7 @@
 import { Carousel, Container, Button } from "react-bootstrap";
 
 import blackTurtle from "./Images/blackTurtle.png";
-import blueTank from "./Images/blueTank.png";
+import blueHoodie from "./Images/blueHoodie.png";
 import greenShort from "./Images/greenShort.png";
 import "./HomeDetails.css";
 export default function Home() {
@@ -33,17 +33,17 @@ export default function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={blueTank}
+              src={blueHoodie}
               alt="Second slide"
               width="10rem"
               height="700px"
             />
 
             <Carousel.Caption>
-              <h3>BLUE SUMMER TANK TOP </h3>
+              <h3>BLUE FALL WEATHER HOODIE </h3>
               <p>
-                A closet staple revisited for the season. This tank top is cut
-                from lightweight, comfortable cotton jersey for easy summer
+                A closet staple revisited for the season. This blue hoodie is cut
+                from lightweight, comfortable cotton cashmere for comforting warm winter
                 wear.
               </p>
             </Carousel.Caption>

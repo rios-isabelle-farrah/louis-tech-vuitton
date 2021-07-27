@@ -15,7 +15,6 @@ const LoginForm = ({ setCurrentUser }) => {
     username: "",
     password: "",
   });
-
   // SHOW
   const getUser = async () => {
     try {
@@ -33,6 +32,7 @@ const LoginForm = ({ setCurrentUser }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const validUser = await getUser();
+    console.log('valid',validUser)
     if (validUser) {
       setCurrentUser(validUser)}
     goBack();

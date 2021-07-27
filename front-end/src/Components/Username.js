@@ -12,6 +12,7 @@ function Username({currentUser}) {
     try {
       const res = await axios.get(`${API}/users`);
       setUsernames(res.data.payload);
+   
     } catch (error) {
       console.log(error);
     }
