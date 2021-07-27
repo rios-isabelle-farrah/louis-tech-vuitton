@@ -7,6 +7,7 @@ import Home from "./Pages/Home.js";
 import Show from "./Pages/Show.js";
 import Edit from "./Pages/Edit.js";
 import New from "./Pages/New.js";
+import Footer from "./Pages/Footer"
 import { useState } from "react";
 
 function App() {
@@ -45,6 +46,7 @@ const [ currentUser, setCurrentUser ] = useState(null)
               <Home />
             </Route>
           </Switch>
+          <Footer />
       </Router>
     </div>
   );
