@@ -21,7 +21,6 @@ function ShirtEditForm() {
   const updateShirt = async (updatedShirt) => {
     try {
       await axios.put(`${API}/shirts/${id}`, updatedShirt);
-      debugger;
       history.push(`/shirts/${id}`);
     } catch (e) {
       console.log(e);
@@ -39,7 +38,6 @@ function ShirtEditForm() {
   useEffect(() => {
     axios.get(`${API}/shirts/${id}`).then(
       (response) => {
-        console.log(response.data);
         setShirt(response.data.payload);
       },
       (error) => history.push(`/not-found`)

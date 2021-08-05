@@ -11,17 +11,7 @@ const API = apiURL();
 
 function ShirtNewForm() {
   let history = useHistory();
-  // const addShirt = async (newShirt) => {
-  //   console.log("ABOUT TO SEND THE REQUEST");
-  //   try {
-  //     await axios.post(`${API}/shirts`, newShirt);
 
-  //     console.log("SUCCESS, SENDING YOU TO INDEX PAGE");
-  //     history.push(`/shirts`);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
   const [shirt, setShirt] = useState({
     type_of: "",
     size: "",
@@ -59,12 +49,11 @@ function ShirtNewForm() {
   return (
     <div className="New-Form">
       <form onSubmit={handleSubmit}>
-        <div class="form-group">
-          {/* <label for="exampleFormControlSelect1"></label> */}
+        <div className="form-group">
           <select
             onChange={handleTextChange}
             required
-            class="form-control form-control-lg"
+            className="form-control form-control-lg"
             id="type_of"
           >
             <option>Type</option>
@@ -89,12 +78,12 @@ function ShirtNewForm() {
           </FloatingLabel>
         </Form.Group>
 
-        <div class="form-group">
-          <label for="exampleFormControlSelect1"></label>
+        <div className="form-group">
+          <label htmlFor="exampleFormControlSelect1"></label>
           <select
             onChange={handleTextChange}
             required
-            class="form-control form-control-lg"
+            className="form-control form-control-lg"
             id="color"
           >
             <option>Color</option>

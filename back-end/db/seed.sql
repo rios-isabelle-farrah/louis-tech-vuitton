@@ -1,3 +1,4 @@
+  
 \c shirts_dev;
 
 INSERT INTO shirts (type_of, size, color, price, in_stock) VALUES
